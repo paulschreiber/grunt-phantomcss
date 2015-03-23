@@ -31,17 +31,30 @@ var sendMessage = function() {
 // Initialise CasperJs
 var phantomCSSPath = args.phantomCSSPath;
 
-phantom.casperPath = phantomCSSPath+s+'CasperJs';
-phantom.injectJs(phantom.casperPath+s+'bin'+s+'bootstrap.js');
+phantom.casperPath = phantomCSSPath + s + 'node_modules/casperjs';
+phantom.injectJs(phantom.casperPath + s + 'bin' + s + 'bootstrap.js');
 
 var casper = require('casper').create({
   viewportSize: viewportSize,
   logLevel: args.logLevel,
-  verbose: true
+  verbose: true,
+  pageSettings: {
+    javascriptEnabled: args.pageSettings.javaScriptEnabled,
+    loadImages: args.pageSettings.loadImages,
+    loadPlugins: args.pageSettings.loadPlugins,
+    localToRemoteUrlAccessEnabled: args.pageSettings.localToRemoteUrlAccessEnabled,
+    userAgent: args.pageSettings.userAgent,
+    userName: args.pageSettings.userName,
+    password: args.pageSettings.password,
+    XSSAuditingEnabled: args.pageSettings.XSSAuditingEnabled,
+  },
+  retryTimeout: args.retryTimeout,
+  waitTimeout: args.waitTimeout,
+  sslProtocol: args.sslProtocol
 });
 
 // Require and initialise PhantomCSS module
-var phantomcss = require(phantomCSSPath+s+'phantomcss.js');
+var phantomcss = require(phantomCSSPath + s + 'phantomcss.js');
 
 phantomcss.init({
   screenshotRoot: args.screenshots,
@@ -73,7 +86,7 @@ casper.then(function() {
   phantomcss.compareAll();
 })
 .then(function() {
-  casper.test.done();
+  // casper.test.done(); // Tempararily disable this as of Casper-1.1-beta3 (http://casperjs.readthedocs.org/en/latest/testing.html)
 })
 .run(function() {
   phantom.exit();

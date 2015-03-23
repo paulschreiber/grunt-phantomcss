@@ -14,7 +14,7 @@ var path = require('path');
 var tmp = require('temporary');
 var phantomBinaryPath = require('phantomjs').path;
 var runnerPath = path.join(__dirname, '..', 'phantomjs', 'runner.js');
-var phantomCSSPath = path.join(__dirname, '..', 'bower_components', 'phantomcss');
+var phantomCSSPath = path.join(__dirname, '..', 'node_modules', 'phantomcss');
 
 module.exports = function(grunt) {
     grunt.registerMultiTask('phantomcss', 'CSS Regression Testing', function() {
@@ -68,6 +68,7 @@ module.exports = function(grunt) {
 
             // Copy fixtures, diffs, and failure images to the results directory
             var allScreenshots = grunt.file.expand(path.join(options.screenshots, '**.png'));
+
             allScreenshots.forEach(function(filepath) {
                 grunt.file.copy(filepath, path.join(options.results, path.basename(filepath)));
             });
@@ -107,8 +108,7 @@ module.exports = function(grunt) {
 
             if (stopChecking) {
                 clearTimeout(messageCheckTimeout);
-            }
-            else {
+            } else {
                 // Check back in a little bit
                 messageCheckTimeout = setTimeout(checkForMessages, 100);
             }
@@ -131,17 +131,14 @@ module.exports = function(grunt) {
 
                     if (failureCount === 0) {
                         grunt.log.ok('All ' + noOfPasses + ' tests passed!');
-                    }
-                    else {
+                    } else {
                         if (noOfErrors === 0) {
                             grunt.log.error(noOfFails + ' tests failed.');
-                        }
-                        else {
+                        } else {
                             grunt.log.error(noOfFails + ' tests failed, ' + noOfErrors + ' had errors.');
                         }
                     }
-                }
-                else {
+                } else {
                     grunt.log.ok('Baseline screenshots generated in '+options.screenshots);
                     grunt.log.warn('Check that the generated screenshots are visually correct and delete them if they aren\'t.');
                 }

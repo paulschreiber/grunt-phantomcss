@@ -41,7 +41,18 @@ module.exports = function (grunt) {
                     viewportSize: [1280, 800],
                     mismatchTolerance: 0.05,
                     waitTimeout: 5000,
-                    logLevel: 'warning' // debug | info | warning | error
+                    logLevel: 'warning', // debug | info | warning | error
+                    pageSettings: {
+                        javascriptEnabled: true,
+                        loadImages: true,
+                        loadPlugins: false,
+                        localToRemoteUrlAccessEnabled: false,
+                        userAgent: null,
+                        userName: null,
+                        password: null,
+                        XSSAuditingEnabled: false
+                    },
+                    retryTimeout: 250
                 },
                 src: [
                     'fixtures/coffeemachine_test.js'

@@ -1,18 +1,24 @@
-# grunt-phantomcss
+# grunt-regression
 
-> Automate CSS regression testing with PhantomCSS
+> Automate visual regression testing with PhantomCSS
+
+Read more about [CSS Testing with PhantomCSS, PhantomJS, CasperJS and Grunt](http://www.phase2technology.com/blog/css-testing-with-phantomcss-phantomjs-casperjs-and-grunt/) in Mica Godbolt’s article.
 
 ## Notice
 
-**This is a fork of the original (presumably discontinued) repository of [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss). Currently this version here is untagged and unreleased on npm. However, you can install and use this version:**
+**This is a fork of the original (presumably discontinued) repository of [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss).**
 
-Add this to your `package.json`:
+## Requirements
 
-    "grunt-phantomcss": "git://github.com/anselmh/grunt-phantomcss.git",
+This library requires CasperJS which you should install in v1.1 via brew (or manually via its website):
 
-or, alternatively, type this into your command line interface:
+    brew install casperjs --devel
 
-    npm i --save-dev git://github.com/anselmh/grunt-phantomcss.git
+## Setup
+
+Type this into your command line interface (CLI):
+
+    npm i --save-dev grunt-regression
 
 ## CHANGELOG
 
@@ -22,10 +28,6 @@ or, alternatively, type this into your command line interface:
 * Remove grunt as peerDependency causing multiple issues with peerPackages
 * Fix post-script `bower install`
 
-## TO DO:
-
-* Add timeout as an optional argument (currently can fail on large testing areas with a timeout)
-
 ----
 
 ## Getting Started
@@ -34,13 +36,13 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-phantomcss --save-dev
+npm install grunt-regression --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-phantomcss');
+grunt.loadNpmTasks('grunt-regression');
 ```
 
 ## The "phantomcss" task

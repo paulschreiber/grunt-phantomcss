@@ -1,14 +1,14 @@
 {
-  "name": "grunt-phantomcss",
-  "version": "0.3.2",
-  "homepage": "https://github.com/anselmh/grunt-phantomcss",
+  "name": "grunt-regression",
+  "version": "0.3.3",
+  "homepage": "https://github.com/anselmh/grunt-regression",
   "authors": [
+    "Anselm Hannemann <info@anselm-hannemann.com>",
     "Chris Gladd <chris.m.gladd@gmail.com>",
     "Larry Davis <lazd@lazd.net>",
-    "Aliaksei Sapach <dreamsonic@tut.by>",
-    "Anselm Hannemann <info@anselm-hannemann.com>"
+    "Aliaksei Sapach <dreamsonic@tut.by>"
   ],
-  "description": "A grunt task for phantomcss – this is a fork of the main repository",
+  "description": "A grunt task for visual regression tests using PhantomCSS",
   "keywords": [
     "grunt",
     "phantomjs",
@@ -26,8 +26,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "phantomcss": "0.7.2"
-  }
+  ]
 }

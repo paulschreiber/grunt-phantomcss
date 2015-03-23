@@ -2,6 +2,12 @@
 
 ### HEAD
 
+* Rename to `grunt-regression` so we can tag and publish it on npm, bower.
+* Update dependencies
+* Add option `sslProtocol`, `pageSettings`, `retryTimeout`
+* Use CasperJS via npm
+* Updated tests
+
 ### v0.3.2
 * Update dependencies
 * Add `mismatchTolerance`as option

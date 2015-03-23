@@ -1,8 +1,8 @@
 {
-  "name": "grunt-phantomcss",
-  "description": "Plugin to do CSS regression testing via PhantomCSS.",
-  "version": "0.3.2",
-  "homepage": "https://github.com/anselmh/grunt-phantomcss",
+  "name": "grunt-regression",
+  "description": "A grunt task for visual regression tests using regression",
+  "version": "0.3.3",
+  "homepage": "https://github.com/anselmh/grunt-regression",
   "author": {
     "name": "Chris Gladd",
     "email": "chris.m.gladd@gmail.com"
@@ -21,20 +21,20 @@
     {
       "name": "Anselm Hannemann",
       "email": "info@anselm-hannemann.com",
-      "url": "http://helloanselm.com/"
+      "url": "https://helloanselm.com/"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/anselmh/grunt-phantomcss.git"
+    "url": "git://github.com/anselmh/grunt-regression.git"
   },
   "bugs": {
-    "url": "https://github.com/anselmh/grunt-phantomcss/issues"
+    "url": "https://github.com/anselmh/grunt-regression/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/anselmh/grunt-phantomcss/blob/master/LICENSE-MIT"
+      "url": "https://github.com/anselmh/grunt-regression/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
@@ -42,25 +42,23 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "bower install"
+    "test": "grunt test"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-nodeunit": "^0.4.1",
-    "jit-grunt": "^0.8.0",
-    "path": "^0.4.9",
-    "time-grunt": "^0.4.0"
+    "jit-grunt": "^0.9.1",
+    "path": "^0.11.14",
+    "time-grunt": "^1.1.0"
   },
   "dependencies": {
-    "bower": "^1.3.9",
-    "temporary": "0.0.8",
-    "phantomjs": "^1.9.7-15"
-  },
-  "peerDependencies": {
-    "phantomjs": "1.9.7-14"
+    "bower": "^1.3.12",
+    "casperjs": "^1.1.0-beta3",
+    "phantomcss": "^0.10.0",
+    "phantomjs": "1.9.16",
+    "temporary": "0.0.8"
   },
   "keywords": [
     "gruntplugin",
